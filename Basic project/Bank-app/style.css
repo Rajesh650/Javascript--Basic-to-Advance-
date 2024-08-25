@@ -1,0 +1,15 @@
+#btn-section {
+    display: none;
+}
+#transactions-section {
+    display: none;
+}
+
+
+.timer {
+    color: white;
+    background-color: black;
+    border: 2px solid red;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
