@@ -1,0 +1,148 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch()</title>
+</head>
+<body>
+    <h1>Why man why you late !!!</h1>
+    <section>
+        <table id="userTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>UserName</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody id="userData">
+                
+            </tbody>
+        </table>
+    </section>
+    
+    <script>
+        // Promise method()
+
+        let url = "https://jsonplaceholder.typicode.com/users"
+        // fetch(url).then((response) =>response.json())
+        // .then(data =>console.log(data))
+        // .catch(error=>console.log(error))
+
+        // async and await method()
+
+        async function getdata(){
+            try {
+                let response = await fetch(url)
+                let data = await response.json()
+                console.log(data);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        getdata()
+
+    let Name = document.getElementById(name)
+    let UserName = document.getElementById(username)
+    let Email= document.getElementById(email)
+
+    let Name1 =()=>{
+        Name.innerHTML =name
+        console.log(name);
+    }
+    
+    </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch()</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Why man why you late !!!</h1>
+    <section>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>UserName</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody id="userData">
+                <!-- User data will be inserted here -->
+            </tbody>
+        </table>
+    </section>
+    
+    <script>
+        let url = "https://jsonplaceholder.typicode.com/users";
+        let tbody = document.getElementById("userData")
+
+        async function getData() {
+            try {
+                let response = await fetch(url);
+                let data = await response.json();
+                print(data);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+        // function displayData(users) {
+        //     let userData = document.getElementById('userData');
+        //     userData.innerHTML = ''; // Clear any existing data
+
+        //     users.forEach(user => {
+        //         let row = document.createElement('tr');
+
+        //         let nameCell = document.createElement('td');
+        //         nameCell.textContent = user.name;
+        //         row.appendChild(nameCell);
+
+        //         let usernameCell = document.createElement('td');
+        //         usernameCell.textContent = user.username;
+        //         row.appendChild(usernameCell);
+
+        //         let emailCell = document.createElement('td');
+        //         emailCell.textContent = user.email;
+        //         row.appendChild(emailCell);
+
+        //         userData.appendChild(row);
+        //     });
+        // }
+
+        getData();
+        function print(arr){
+            let str =""
+            arr.forEach(ele => {
+                str+= `<tr>
+                    <td>${ele.id}</td>
+                    <td>${ele.name}</td>
+                    <td>${ele.username}</td>
+                    <td>${ele.email}</td>
+                    `
+            });
+            tbody.innerHTML = str
+        }
+    </script>
+</body>
+</html>
