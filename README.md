@@ -1,2 +1,4 @@
 # Javascript (Basic to Advance)
- This files contains Javascript practices with some basic projects.
+ This repository contains JavaScript topic practices along with some basic projects.
+
+
